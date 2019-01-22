@@ -25,7 +25,10 @@ class Gnuradio < Formula
   depends_on "python@2"
   depends_on "uhd"
   depends_on "zeromq"
-
+  depends_on "jack"
+  depends_on "pygtk"
+  depends_on "sdl"
+  depends_on "wxpython"
   # cheetah starts here
   resource "Markdown" do
     url "https://files.pythonhosted.org/packages/b3/73/fc5c850f44af5889192dff783b7b0d8f3fe8d30b65c8e3f78f8f0265fecf/Markdown-2.6.11.tar.gz"
@@ -99,7 +102,7 @@ class Gnuradio < Formula
                  GR_BLOCKS GR_PAGER GR_NOAA GR_CHANNELS GR_AUDIO
                  GR_FCD GR_VOCODER GR_FEC GR_DIGITAL GR_DTV GR_ATSC
                  GR_TRELLIS GR_ZEROMQ GR_WAVELET GR_UHD DOXYGEN SPHINX
-                 PYTHON GR_UTILS]
+                 PYTHON GR_UTILS GRC GR_WXGUI GR_VIDEO_SDL]
     enabled.each do |c|
       args << "-DENABLE_#{c}=ON"
     end
